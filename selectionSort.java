@@ -1,27 +1,36 @@
-public class selectionSort {  
-    public static void main(String[] args) {  
-        int[] a = {10, 9, 7, 101, 23, 44, 12, 78, 34, 23};  
-        int i,j,k,pos,temp;  
-        for(i=0;i<10;i++) {  
-            pos = smallest(a,10,i);  
-            temp = a[i];  
-            a[i]=a[pos];  
-            a[pos] = temp;  
-        }  
-        for(i=0;i<10;i++) {  
-            System.out.println(a[i]);  
-        }  
-    }  
-    public static int smallest(int a[], int n, int i) {  
-        int small,pos,j;  
-        small = a[i];  
-        pos = i;  
-        for(j=i+1;j<10;j++) {  
-            if(a[j]<small) {  
-                small = a[j];  
-                pos=j;  
-            }  
-        }  
-        return pos;  
-    }  
-}  
+import java.util.*;
+
+public class SelectionSortExample {
+    public static void main(String args[]) {
+
+        int n, i, j, tempvar;
+        Scanner sc = new Scanner(System.in); 
+        System.out.print("Enter the size of array : \n");
+        n = sc.nextInt();
+
+        int array[] = new int[n]; 
+        System.out.print("Enter the elements that need to be inserted in the array : \n");
+        
+        for(i=0; i<n; i++) {
+            array[i] = sc.nextInt();
+        }
+
+        System.out.print("array before Sorting: \n"+ Arrays.toString(array));
+        System.out.print("\nSorting begins here..\n");
+
+        for(i=0; i<n; i++) {
+            for(j=i+1; j<n; j++) {
+                if(array[i] > array[j]) {
+                    tempvar = array[i];
+                    array[i] = array[j];
+                    array[j] = tempvar;
+                }
+            }
+        }
+        System.out.print("Array after Sorting is :\n");
+
+        for(i=0; i<n; i++) {
+            System.out.print(array[i]+ " ");
+        }
+    }
+}
