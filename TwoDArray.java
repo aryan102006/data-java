@@ -1,24 +1,26 @@
-port java.util.*;
-
-public class SelectionSortUI
-{
-public static void main(String args[])
-{
-	int[] array = {23, 65, 12, 18, 42};
-	System.out.println( "Original Array:" + Arrays.toString(array) );
-
-	for(int i=0; i<array.length; i++)  
+import java.util.Scanner;  
+public class TwoDArray {  
+public static void main(String[] args) {  
+    int[][] arr = new int[3][3];  
+    Scanner sc = new Scanner(System.in);  
+    for (int i =0;i<3;i++)  
     {  
-        for(int j=i+1; j<array.length; j++)  
+        for(int j=0;j<3;j++)  
         {  
-            if(array[i] > array[j])  
-            {  
-                int temp = array[i];  
-                array[i] = array[j];  
-                array[j] = temp;  
-            }  
+            System.out.println("Enter Element");  
+            arr[i][j]=sc.nextInt();  
+            System.out.println();  
         }  
     }  
-	System.out.println("Sorted Array" + Arrays.toString(array));
-}
+    System.out.println("Printing Elements...");  
+    for(int i=0;i<3;i++)  
+    {   
+        System.out.println();  
+        for(int j=0;j<3;j++)  
+        {  
+            System.out.print(arr[i][j]+"\t");  
+        }  
+    }  
+    System.out.println(arr[1][1]);
+}  
 }
